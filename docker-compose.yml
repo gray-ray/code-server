@@ -1,0 +1,13 @@
+
+services:
+  code-server:
+    build: .
+    restart:  unless-stopped
+    environment:
+      - PASSWORD=123456
+      - PORT=8083  
+      - TZ=Asia/Shanghai  # 设置时区
+    volumes:
+      - /data/workspace:/home/coder
+    ports:
+      - '8083:8083'
